@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="MongoDB overview presentation">
+		<meta name="author" content="Ihar Kharashun">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1></h1>
+					<img width="678" height="177" data-src="./assets/images/mongodb-logo.jpg" style="border: none; box-shadow: none">
+					<p>
+						<small>Overview by <a href="https://ihargit.github.io/">Ihar Kharashun</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2 style="text-transform: none"><small>MongoDB is <span style="font-size: 4rem; vertical-align: baseline;">NoSQL</span>...</small></h2>
+					<img width="878" height="403" data-src="./assets/images/schema-sql-crossed.jpg" style="border:none; box-shadow:none;">
+				</section>
+
+				<section>
+					<h2 style="position: absolute; top: 10%;"><small>...<span style="font-size: 4rem; vertical-align: baseline;">document</span> database</small></h2>
+					<img width="85%" height="auto" data-src="./assets/images/MongoDB_server.svg" style="border: none; box-shadow: none; margin: -15px 0px;">
+				</section>
+
+				<section>
+					<section>
+						<h2>Features:</h2>
+					</section>
+					<section>
+						<ul>
+							<li>based on BSON (binary JSON) documents: <a href="https://docs.mongodb.com/manual/reference/bson-types/">https://docs.mongodb.com/manual/reference/bson-types/</a></li>
+						</ul>
+					</section>
+					<section>
+						<img width="100%" height="auto" data-src="./assets/images/document.png" style="border: none; box-shadow: none; margin: 0">
+					</section>
+					<section>
+						<ul>
+							<li>good with large volumes of fast changing <span style="font-size: 1.2em; background: yellow;">unstructured</span> data;</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li><span style="background: yellow;">agile sprints</span> ready (frequent code pushes);</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>geo-distribution (high availability, <span style="background: yellow;">аuto-sharding</span>)<br><span class="fragment">&nbsp;&nbsp;& scalability (cloud instances, commodity servers);</span> </li>
+						</ul>
+					</section>
+						<section>
+							<ul>
+								<li>multi-structured data (mixed data types, hierarchical <span style="background: yellow;">data nesting</span>);</li>
+							</ul>
+						</section>
+						<section>
+							<ul>
+								<li>quick schema iteration (<span style="background: yellow;">no downtime</span>);</li>
+							</ul>
+						</section>
+						<section>
+							<ul>
+								<li>integrated caching (performance, symplicity);</li>
+							</ul>
+						</section>
+						<section>
+							<ul>
+								<li>cross-platform (Linux, macOS, Windows, Docker);</li>
+							</ul>
+						</section>
+						<section>
+							<ul>
+								<li>available for free (community edition);</li>
+							</ul>
+						</section>
+						<section>
+							<h3>and more:</h3>
+							<ul>
+								<li>object-oriented API;</li>
+								<li class="fragment">idiomatic drivers (minimize onboarding time for new developers);</li>
+								<li class="fragment">intuitive</li>
+							</ul>
+						</section>
+				</section>
+				<section>
+					<section>
+						<h2>Where to Use MongoDB?</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Big Data</li>
+							<li class="fragment">Content Management and Delivery</li>
+							<li class="fragment">Mobile and Social Infrastructure</li>
+							<li class="fragment">User Data Management</li>
+							<li class="fragment">Data Hub</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h3>MongoDB available as:</h3>
+					<ul>
+						<li>cloud service (MongoDB Atlas, Stitch...);</li>
+						<li>software (community and enterprise editions)</li>
+					</ul>
+				</section>
+				<section>
+					<h3>To work with both one needs client software
+						</h3>
+					<img width="100%" height="auto" data-src="./assets/images/MongoDB_drivers.png" style="border: none; box-shadow: none; margin: -15px 0px;">
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: none">Mongo Shell is an interactive<br><span style="background: yellow;">JavaScript</span> interface to:</h3>
+						<ul>
+							<li class="fragment">query and update data;</li>
+							<li class="fragment">perform administrative operations</li>
+						</ul>
+					</section>
+					<section data-markdown>
+						Start the mongo Shell and Connect to MongoDB
+						```javascript
+						// local host, default port
+						mongo
+						// local host, custom port
+						mongo --port 28015
+						// remote host
+						mongo "mongodb://mongodb0.example.com:27017"
+						// there are more options...
+						```
+					</section>
+					<section data-markdown>
+						Navigate to database
+						```javascript
+						// display current database
+						db
+						// select a database
+						use myDB
+						// create a database (when one first store data in the database)
+						use myNewDB
+						db.myCollection.insertOne( { x: 1 } );
+						
+						```
+					</section>
+					<section data-markdown>
+						Insert Documents
+						```javascript
+						// insert one document
+						db.myCollection.insertOne( { x: 1, y: 1 } )
+						// insert several documents
+						db.myCollection.insertMany([
+							{ x: 2, y: 2 },
+							{ x: 3, y: 3 } 
+						])
+						```
+					</section>
+					<section data-markdown>
+						Query Documents
+						```javascript
+						// Equality Condition, retrieve documents with x === 1
+						db.myCollection.find( { x: 1 } )
+						// x === 1 or x === 2
+						db.myCollection.find( { x: { $in: [ 1, 2 ] } } )
+						// AND Condition, x === 2 AND y < 3
+						db.myCollection.find( { x: 2, y: { $lt: 3} } )
+						// OR Condition, x === 2 OR y < 3
+						db.myCollection.find( { $or: [ { x: 2 }, { y: { $lt: 3 } } ] } )
+
+						```
+					</section>
+					<section data-markdown>
+						Update Documents
+						```javascript
+						// update the first document with x === 1
+						db.myCollection.updateOne( 
+							{ x: 1 },
+							{
+								$set: { y: 2},
+								$currentDate: { lastModified: true }
+							} 
+						)
+						// there are updateMany(), replaceOne() 
+
+						```
+					</section>
+					<section data-markdown>
+						Delete Documents
+						```javascript
+						// delete the first document with x === 1
+						db.myCollection.deleteOne( { x: 1 } )
+						// delete all documents with x === 1
+						db.myCollection.deleteMany( { x: 1 } )
+
+						```
+					</section>
+					<section data-markdown>
+						#### The mongo Shell tutorial:
+						[https://docs.mongodb.com/manual/mongo/](https://docs.mongodb.com/manual/mongo/)
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						#### Node.js MongoDB Driver:
+						[https://mongodb.github.io/node-mongodb-native/](https://mongodb.github.io/node-mongodb-native/)
+					</section>
+					<section data-markdown>
+						#### Node.js MongoDB Driver API:
+						[https://mongodb.github.io/node-mongodb-native/3.2/api/](https://mongodb.github.io/node-mongodb-native/3.2/api/)
+					</section>
+					<section data-markdown>
+						#### REST API Server for MongoDB built in node.js:
+						[https://github.com/cordazar/crest](https://github.com/cordazar/crest)
+					</section>
+				</section>
+				<section data-markdown>
+					#### Useful links:
+					-	Manual: [https://docs.mongodb.com/manual/](https://docs.mongodb.com/manual)
+					- Drivers: [https://docs.mongodb.com/ecosystem/drivers/](https://docs.mongodb.com/ecosystem/drivers/)
+				</section>
+
+
+
+				<section>
+					<h2>Thank you!</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
