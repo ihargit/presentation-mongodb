@@ -21,7 +21,7 @@ Features:
     & scalability (cloud instances, commodity servers);
 -multi-structured data (mixed data types, hierarchical data nesting);
 -quick schema iteration (no downtime);
--integrated caching (performance, symplicity);
+-integrated caching (performance, simplicity);
 -cross-platform (Linux, macOS, Windows, Docker);
 -available for free (community edition);
 
